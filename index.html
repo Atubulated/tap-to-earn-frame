@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta property="fc:frame" content="vNext">
+    <meta property="fc:frame:image" content="https://imgur.com/a/9NEbuJw"> <!-- Replace with your image -->
+    <meta property="fc:frame:button:1" content="Tap to Earn 10 XP!">
+    <meta property="fc:frame:post_url" content="https://atubulated.github.io/tap-to-earn-frame/">
+    <title>Tap to Earn</title>
+</head>
+<body>
+    <script>
+        // Track taps in local storage
+        const params = new URLSearchParams(window.location.search);
+        if (params.has('tapped')) {
+            const taps = parseInt(localStorage.getItem('taps') || '0') + 10;
+            localStorage.setItem('taps', taps);
+            alert(`You earned 10 XP! Total: ${taps}`);
+        }
+    </script>
+</body>
+</html>
